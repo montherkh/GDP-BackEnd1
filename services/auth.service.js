@@ -45,7 +45,7 @@ class AuthService {
         }
     }
 
-    generate(id) {
+    generate(id) { //generates a token
         const index = this.database.findIndex(function (token) {
             return token.userID === id;
         });
@@ -60,7 +60,7 @@ class AuthService {
         return token;
     }
 
-    getID(token) {
+    getID(token) { //returns the id of the user
         const userToken = this.database.find(function (res) {
             return res.token === token;
         });
